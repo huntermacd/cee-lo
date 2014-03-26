@@ -1,0 +1,277 @@
+/* --------------------------------------- */
+/*              Global Styles              */
+/* --------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Monofett);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body {
+	background-image: url(../imgs/escheresque_ste.png);
+}
+
+#wrap {
+	width: 1000px;
+	margin: 10px auto;
+}
+
+header {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	text-align: center;
+}
+
+h1 {
+	padding: 5px;
+	margin: 0 auto;
+}
+
+h3,
+button {
+	font-family: 'Lobster', cursive;
+}
+
+h3 {
+	font-size: 1.05em;
+}
+
+p,
+h4 {
+	font-family: "Helvetica", serif;
+}
+
+/* --------------------------------------- */
+/*               Wrap Styles               */
+/* --------------------------------------- */
+
+#page-left,
+#rules,
+#page-right,
+#player-pot-banker,
+#player,
+#pot,
+#banker,
+#bets-status,
+#status,
+#dice,
+#roll,
+#bets,
+footer {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+header,
+#page-left,
+#page-right,
+#player-pot-banker,
+#bets-status,
+#dice {
+	margin-bottom: 10px;
+}
+
+#page-left,
+#player,
+#pot,
+#bets {
+	margin-right: 10px;
+}
+
+/* --------------------------------------- */
+/*             Page Left Styles            */
+/* --------------------------------------- */
+
+h1 {
+	font-family: 'Monofett', cursive;
+	font-size: 3.5em;
+}
+
+#page-left {
+	width: 350px;
+	float: left;
+}
+
+/* --------------------------------------- */
+/*            Page Right Styles            */
+/* --------------------------------------- */
+
+#page-right {
+	width: 600px;
+	float: left;
+}
+
+#player-pot-banker,
+#dice,
+#roll-button,
+#bets,
+#status,
+#roll {
+	text-align: center;
+}
+
+#bets,
+#status {
+	width: 265px;
+	height: 127px;
+	float: left;
+}
+
+#bets h3 {
+	margin-top: 5px;
+}
+
+#bets-status {
+	overflow: auto;
+}
+
+#player,
+#pot,
+#banker,
+#die-1,
+#die-2,
+#die-3 {
+	display: inline-block;
+}
+
+#player,
+#pot,
+#banker {
+	width: 164px;
+}
+
+#die-1,
+#die-2,
+#die-3 {
+	background: url(../imgs/dieSprite.png);
+	border: 5px solid black;
+	border-radius: 10px;
+	background-color: #fff;
+	width: 100px;
+	height: 100px;
+	margin: 0 25px;
+}
+
+#roll-button {
+	width: 575px;
+	height: 78px;
+	border: none;
+	margin: 0 auto;
+	padding: 9px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px #000;
+	-webkit-box-shadow: 3px 3px #000;
+	box-shadow: 3px 3px #000;
+}
+
+#roll-button:hover {
+	background-color: rgba(100, 255, 100, 0.5);
+	cursor: pointer;
+}
+
+#roll-button:active {
+	-moz-box-shadow: 0px 0px #000;
+	-webkit-box-shadow: 0px 0px #000;
+	box-shadow: 0px 0px #000;
+	-webkit-transform: translate(3px, 3px);
+	-moz-transform: translate(3px, 3px);
+	transform: translate(3px, 3px);
+}
+
+#player-result,
+#banker-result {
+	width: 135px;
+	height: 60px;
+	border: none;
+	padding: 9px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+#player-result {
+	float: left;
+}
+
+#player-result h4,
+#banker-result h4 {
+	margin-top: -1px;
+	margin-bottom: 1px;
+	font-family: 'Lobster', cursive;
+}
+
+#banker-result {
+	float: right;
+}
+
+#player-result-display,
+#banker-result-display {
+	margin-top: -1px;
+	font-size: 14px;
+}
+
+#place-bet {
+	width: 100px;
+	height: 35px;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	-moz-box-shadow: 3px 3px #000;
+	-webkit-box-shadow: 3px 3px #000;
+	box-shadow: 3px 3px #000;
+}
+
+#place-bet:hover {
+	background-color: rgba(100, 255, 100, 0.5);
+}
+
+#place-bet:active {
+	-moz-box-shadow: 0px 0px #000;
+	-webkit-box-shadow: 0px 0px #000;
+	box-shadow: 0px 0px #000;
+	-webkit-transform: translate(3px, 3px);
+	-moz-transform: translate(3px, 3px);
+	transform: translate(3px, 3px);
+}
+
+/* --------------------------------------- */
+/*              Footer Styles              */
+/* --------------------------------------- */
+
+footer {
+	clear: both;
+	text-align: center;
+}
+
+footer p {
+	margin: -5px;
+}
+
+/* --------------------------------------- */
+/*               Class Styles              */
+/* --------------------------------------- */
+
+#player-pot-banker .active {
+	background-color: rgba(100, 255, 100, 0.5);
+}
+
+#place-bet.inactive,
+#place-bet.inactive:hover,
+#roll-button.inactive,
+#roll-button.inactive:hover {
+	background-color: rgba(255, 100, 100, 0.5);
+}
+
+#roll .set {
+	background-color: rgba(100, 100, 255, 0.5);
+}
+
+/* Die positions:
+
+1:    0px 0px
+2: -100px 0px
+3: -200px 0px
+4: -300px 0px
+5: -400px 0px
+6: -500px 0px
+
+*/

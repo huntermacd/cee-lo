@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Cee-Lo | A Game of Dice</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="page-left">
+
+				<header>
+					<h1>Cee-Lo</h1>
+				</header>
+
+				<div id="rules">
+					<h3>How to Play:</h3>
+					<p>You and the Banker begin with 100 chips each. Your goal is to take all of the Banker's chips by betting on die rolls and winning. If your chip count falls to zero, you lose. If the Banker's chip count falls to zero, you win! First, set your bet (in 5-chip increments), then click the Roll button. The Banker will always match your bet if possible. Continue to reroll until you make a valid roll, then the Banker does the same. Winner takes the pot!</p>
+					<p>Valid rolls (from best to worst):</p>
+					<ul>
+						<li>4-5-6: Automatic win.</li>
+						<li>Trips (three of the same number): Higher trips beat lower trips.</li>
+						<li>Point (two of a kind, one single): Single die is the point. Higher point beats a lower point.</li>
+						<li>1-2-3: Automatic lose.</li>
+						<li>All other rolls are meaningless. Reroll until you get one of the above.</li>
+					</ul>
+				</div>
+
+			</div>
+			<div id="page-right">
+
+				<div id="player-pot-banker">
+					<div id="player" class="active">
+						<h3>Player:</h3>
+						<h4><span id="current-player-chips">100</span></h4>
+					</div>
+					<div id="pot">
+						<h3>Pot:</h3>
+						<h4><span id="current-pot">0</span></h4>
+					</div>
+					<div id="banker">
+						<h3>Banker:</h3>
+						<h4><span id="current-banker-chips">100</span></h4>
+					</div>
+				</div>
+
+				<div id="bets-status">
+					<div id="bets">
+						<h3>Bet:</h3>
+						<form oninput="x.value=parseInt(input.value)">
+							<output name="x" for="input" id="output">5</output><br>
+							<input type="range" id="input" value="5" min="5" max="100" step="5">
+						</form>
+						<button id="place-bet">Place Bet</button>
+					</div>
+					<div id="status"></div>
+				</div>
+
+				<div id="dice">
+					<div id="die-1"></div>
+					<div id="die-2"></div>
+					<div id="die-3"></div>
+				</div>
+
+				<div id="roll">
+					<!-- <div id="player-result">
+						<h4>Your result:</h4>
+						<p id="player-result-display"></p>
+					</div> -->
+					<button id="roll-button">Roll</button>
+					<!-- <div id="banker-result">
+						<h4>Banker result:</h4>
+						<p id="banker-result-display"></p>
+					</div> -->
+				</div>
+
+			</div>
+			<footer>
+				<p>&copy; 2013 Hunter MacDermut</p>
+			</footer>
+		</div>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
