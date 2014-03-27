@@ -71,7 +71,6 @@ function update(){
 function roll(){
 
 	var counter = 0;
-	var result = [];
 
 	var timer = setInterval(function(){
 
@@ -146,12 +145,30 @@ function roll(){
 
 		if(counter === 12){
 			clearInterval(timer);
-			result = [randNum1, randNum2, randNum3];
+			player.roll = [randNum1, randNum2, randNum3];
+			bankerRoll();
+			player.rank = rank(player.roll.sort());
+			banker.rank = rank(banker.roll.sort());
+
+			if(player.rank === 0){
+				el_status.innerHTML = "Your roll is invalid. Please roll again.";
+			} else {
+				el_roll.disabled = true;
+				el_status.innerHTML = "The player rolled: " + player.roll[0] + "-" + player.roll[1] + "-" + player.roll[2] + 
+									"\nThe banker rolled: " + banker.roll[0] + "-" + banker.roll[1] + "-" + banker.roll[2];
+
+				
+			}
 		}
 
 	}, 150);
+}
 
-	return result;
+function bankerRoll(){
+	banker.roll = [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
+	while(rank(banker.roll) === 0){
+		banker.roll = [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
+	}
 }
 
 function rank(roll){
@@ -215,13 +232,9 @@ el_roll.addEventListener("click", roll, false);
 
 // Initialize
 
-// while(gameEnd === false){
 
-	// player.roll = roll();
-	// banker.roll = roll();
-	// el_status.innerHTML = "The player rolled: " + player.roll[0] + "-" + player.roll[1] + "-" + player.roll[2] + 
-	// 					  "\nThe banker rolled: " + banker.roll[0] + "-" + banker.roll[1] + "-" + banker.roll[2];
-	// player.rank = rank(player.roll.sort());
-	// banker.rank = rank(banker.roll.sort());
 
-// }
+
+
+
+
